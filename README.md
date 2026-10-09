@@ -15,7 +15,7 @@ I am an IBM resource deployment and delivery professional building hands-on cybe
 | --- | --- | --- |
 | [01 — IDOR Access-Control Lab](01-idor-access-control/README.md) | Lab solved; finding documented with three uploaded evidence screenshots | Manual authorization testing and reproducible findings |
 | [02 — Vulnerability Triage & Customer Communication](02-vulnerability-triage/README.md) | Simulated case study drafted; self-assessment pending | Scope, validation, conditional risk analysis, customer update and tracker |
-| 03 — Bug Bounty Program Onboarding | Planned | Scope, rules of engagement, launch readiness and customer communications |
+| [03 — Private Bug Bounty Program Onboarding](03-bug-bounty-onboarding/README.md) | Fictional onboarding package drafted; candidate exercise pending | Researcher brief, kickoff/RACI, launch gates, decision log and customer communications |
 
 ## Certifications and learning
 - **Microsoft Azure Fundamentals (AZ-900)** — earned
@@ -30,4 +30,4 @@ Everything is labeled as either a training lab or a simulated deliverable. **No 
 ## Current focus
 - **Project 01:** Completed the authorized PortSwigger IDOR lab, documented the finding, and published three sanitized evidence screenshots. Burp HTTP capture remains optional.
 - **Project 02:** Drafted a clearly labeled simulated vulnerability triage case using the IDOR finding, with a decision log, customer communication, and tracker. Next: practice risk-based prioritization and add my own written response.
-- **Project 03:** Planned mock bug bounty program onboarding exercise.
+- **Project 03:** Simulated private-program onboarding package drafted for an invented SaaS customer. No real program has launched, and the candidate go/no-go exercise is next.
