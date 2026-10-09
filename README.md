@@ -14,7 +14,7 @@ I am an IBM resource deployment and delivery professional building hands-on cybe
 | Project | Status | What it demonstrates |
 | --- | --- | --- |
 | [01 — IDOR Access-Control Lab](01-idor-access-control/README.md) | Lab solved; finding documented with three uploaded evidence screenshots | Manual authorization testing and reproducible findings |
-| 02 — Vulnerability Triage | Planned | Severity reasoning, ownership, remediation tracking |
+| [02 — Vulnerability Triage & Customer Communication](02-vulnerability-triage/README.md) | Simulated case study drafted; self-assessment pending | Scope, validation, conditional risk analysis, customer update and tracker |
 | 03 — Bug Bounty Program Onboarding | Planned | Scope, rules of engagement, launch readiness and customer communications |
 
 ## Certifications and learning
@@ -28,4 +28,6 @@ I am an IBM resource deployment and delivery professional building hands-on cybe
 Everything is labeled as either a training lab or a simulated deliverable. **No production systems were tested**, and completing a lab is not represented as commercial penetration-testing experience. Evidence is sanitized before publication: no live session cookies, API tokens, passwords, or private user data.
 
 ## Current focus
-Document a completed PortSwigger Web Security Academy access-control lab. Three sanitized evidence screenshots are now published and linked from the IDOR report; HTTP request/response capture in Burp is an optional future extension.
+- **Project 01:** Completed the authorized PortSwigger IDOR lab, documented the finding, and published three sanitized evidence screenshots. Burp HTTP capture remains optional.
+- **Project 02:** Drafted a clearly labeled simulated vulnerability triage case using the IDOR finding, with a decision log, customer communication, and tracker. Next: practice risk-based prioritization and add my own written response.
+- **Project 03:** Planned mock bug bounty program onboarding exercise.
