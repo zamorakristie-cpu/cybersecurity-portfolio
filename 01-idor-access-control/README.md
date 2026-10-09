@@ -3,7 +3,7 @@
 **Lab:** [PortSwigger Web Security Academy — User ID controlled by request parameter](https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter)  
 **Test date:** October 9, 2026  
 **Environment:** PortSwigger's authorized, intentionally vulnerable lab  
-**Status:** **Solved and reproduced in screenshots**; sanitized screenshot uploads to this repository are pending.  
+**Status:** **Solved and documented** with three published, sanitized screenshots.  
 **Method:** Chrome browser, manually modifying the `id` URL parameter; no Burp Suite used.
 
 ## Objective
@@ -22,13 +22,27 @@ These observations are supported by screenshots provided by the learner. They ar
 
 ## Evidence captured
 
-| File to upload | What it shows | Status |
+| Evidence file | What it shows | Status |
 | --- | --- | --- |
-| `E01_authorized_wiener.png` | Original `id=wiener` account page | Captured; API key redacted; upload pending |
-| `E02_unauthorized_carlos.png` | Modified `id=carlos` account page | Captured; API key redacted; upload pending |
-| `E03_lab_solved.png` | PortSwigger successful lab completion | Captured; API key redacted; upload pending |
+| [E01_authorized_wiener.png](E01_authorized_wiener.png) | Original `id=wiener` account page | Published; key redacted |
+| [E02_unauthorized_carlos.png](E02_unauthorized_carlos.png) | Modified `id=carlos` account page | Published; key redacted |
+| [E03_lab_solved.png](E03_lab_solved.png) | PortSwigger successful lab completion | Published; key redacted |
 
-**Publish only the sanitized images**. The unedited screenshots contain visible training API keys. The screenshot files are prepared locally for upload but have **not been uploaded** to GitHub.
+The published files are the sanitized copies prepared from the training screenshots. The original screenshots had visible training API keys and should not be uploaded.
+
+## Screenshot evidence
+
+### E01 — Authorized account (`wiener`)
+
+![Sanitized authorized account screen showing id=wiener](E01_authorized_wiener.png)
+
+### E02 — Unauthorized account (`carlos`)
+
+![Sanitized horizontal privilege escalation screen showing id=carlos](E02_unauthorized_carlos.png)
+
+### E03 — Lab solved
+
+![PortSwigger lab successfully solved](E03_lab_solved.png)
 
 ## Technical report
 
