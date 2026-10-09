@@ -1,24 +1,34 @@
-# Lab 01 — IDOR / Broken Access Control
+# Lab 01 — User ID Controlled by Request Parameter
 
-**Environment:** PortSwigger Web Security Academy (authorized training lab)  
-**Status:** Lab solved manually; Burp reproduction, screenshots, and complete report pending  
-**Method used so far:** Changed a user identifier in the browser URL
+**Source:** [PortSwigger Web Security Academy — User ID controlled by request parameter](https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter)  
+**Environment:** Authorized PortSwigger training lab  
+**Status:** Solved manually; screenshots and formal evidence report pending  
+**Observed testing method:** Changed the user identifier in the account page URL using a browser (Burp Suite was not required)
 
-## Objective
-Investigate whether changing an object/user identifier in a URL can expose a resource without the appropriate authorization check.
+## Objective and vulnerability
+The official lab describes a **horizontal privilege escalation** flaw in the account page. Its challenge is to obtain the API key associated with the training user `carlos` using access from the training user `wiener`. The URL's `id` parameter selects the user account.
 
-## What I did (confirmed)
-I completed the PortSwigger access-control training challenge by changing the URL. I did **not** need Burp Suite to solve the challenge.
+This is a lab example of broken object-level authorization / IDOR.
 
-## Evidence to collect next
-- [ ] Record the exact lab title and link
-- [ ] Record the original request URL with sensitive values removed
-- [ ] Record the modified identifier and resulting page/response
-- [ ] Capture the lab-solved confirmation
-- [ ] Optionally reproduce with Burp Proxy / Repeater and save sanitized HTTP exchanges
-- [ ] Write a clear finding and risk assessment in [vulnerability-report.md](vulnerability-report.md)
+## Conceptual request difference
+These are patterns from the lab instructions, **not captured HTTP evidence**:
 
-**Evidence policy:** Only collect evidence in your own authorized lab instance. Redact session cookies, credentials, tokens, API keys, and any other sensitive material before uploading.
+```text
+/my-account?id=wiener
+/my-account?id=carlos
+```
+
+Changing a URL parameter should never grant access to someone else's private account resources.
+
+## Evidence checklist
+- [ ] **E01:** Original account page with `id=wiener`
+- [ ] **E02:** Modified account page with `id=carlos`, showing the result **with the API key fully redacted**
+- [ ] **E03:** PortSwigger "Lab Solved" confirmation
+- [ ] **E04 (optional):** Sanitized Burp Repeater request and response comparison
+- [ ] Complete [vulnerability-report.md](vulnerability-report.md) with actual steps and findings
+
+## Publishing safety
+Use only your authorized training lab. Redact any API keys (including the lab key), session cookies, credentials, tokens and personal information before publishing screenshots. Do not publish the unredacted HTTP response if it contains a key.
 
 ## Portfolio integrity
-This is a **training exercise**, not a reported production vulnerability or a paid bug bounty. Any impact and severity assessment should be based on the behavior actually reproduced.
+Training lab only—not a production discovery, commercial penetration test or real bug bounty submission. The learner completed this lab manually by changing the URL.
