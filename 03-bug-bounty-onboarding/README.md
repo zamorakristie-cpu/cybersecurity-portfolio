@@ -1,66 +1,57 @@
 # Project 03 — Private Bug Bounty Program Onboarding
 
-**Status:** Program-launch simulation drafted; candidate decisions and final review pending.  
-**Portfolio role:** Technical Engagement / Delivery Manager (simulated)  
-**Company:** **Asteria Cloud**, an entirely fictional SaaS company  
-**Platform concept:** A Bugcrowd-managed private bug bounty program (hypothetical only)  
-**Initial scope:** A non-existent staging environment at reserved `.test` hostnames  
-**Prepared:** October 9, 2026
+**Type:** Security-program delivery / onboarding case study  
+**Fictional customer:** Asteria Cloud — B2B SaaS provider  
+**Approach:** Hypothetical private, invitation-only bug bounty  
+**Portfolio status:** Simulated onboarding package prepared; **NO-GO recommendation** recorded; **not launched**
 
-> **Portfolio integrity:** No customer engaged, program created, launch scheduled, bounty budget approved, researcher invited, or testing permission issued. All names, hosts, owners and milestones below are illustrative. This is **not** an authorized target list for actual security testing.
+> **Scope note:** Asteria Cloud and all `.test` hostnames below are fictional. No real customer engaged, program launched, researcher invited, or test authorization issued.
 
-## Scenario
+## Business challenge
 
-Asteria Cloud offers a multi-tenant SaaS dashboard and an API. Its fictional security lead wants a limited private bug bounty launch focused on authentication, access control and sensitive-data exposure. The engineering team can supply test accounts and a dedicated staging environment, but launch requirements still need approval.
+A fictional SaaS customer wants to launch a private vulnerability-disclosure/reward program focused on authentication, access control and API security. The delivery team must agree on the exact testing boundaries, safe researcher access, escalation ownership, known issues and the program brief.
 
-**Your challenge:** As the coordination lead, produce an auditable onboarding package that clearly separates technical inputs, decisions, ownership, dependencies and go/no-go criteria.
+Leadership wants an immediate launch, but the engineering team has not provided validated synthetic test accounts and the security team has not approved the scope. **The recommended decision is NO-GO** until launch-critical gates are complete. The authorized customer decision-maker would make any final launch decision.
 
 ## Deliverables
 
-| Deliverable | Purpose | Status |
-| --- | --- | --- |
-| [Draft Program Brief](program-brief.md) | Researcher-facing scope, test rules, exclusions and disclosure | Draft / approval pending |
-| [Kickoff Agenda & Stakeholder RACI](kickoff-and-raci.md) | Discovery questions, owners, and escalation paths | Draft / owners hypothetical |
-| [Launch Readiness Checklist](launch-readiness.md) | Dependencies, evidence requirements and launch gates | Draft / no launch authorized |
-| [Decision Log](decision-log.md) | Decisions, options, risks, owner and rationale | Open / candidate exercise pending |
-| [Sample Customer Email](customer-email.md) | Professional kickoff and follow-up communication | Draft / not sent |
+| Deliverable | Purpose |
+| --- | --- |
+| [Researcher Program Brief](program-brief.md) | Proposed targets, testing rules, exclusions, reporting instructions and disclosure expectations |
+| [Kickoff Agenda & RACI](kickoff-and-raci.md) | Stakeholder discovery, responsibilities, engineering/security ownership and escalation questions |
+| [Launch Readiness Checklist](launch-readiness.md) | Evidence-based readiness gates, open dependencies and approval conditions |
+| [Decision & Risk Log](decision-log.md) | NO-GO rationale, safer alternatives, outstanding evidence and decision ownership |
+| [Customer Email](customer-email.md) | Sample kickoff follow-up requesting owners, scope confirmation and readiness inputs |
 
-## Program concept
+## Planned program boundaries
 
-- **Type:** Private, invitation-only *simulation*.
-- **Primary testing themes:** Access control (including IDOR), authentication/session issues, and inappropriate API data access.
-- **Illustrative in-scope staging targets:** `https://staging-app.asteria.test` and `https://staging-api.asteria.test/v1/`.
-- **Out of scope:** Any real production system, third-party service, personal account, or asset not expressly listed.
-- **Account access:** Customer-provided synthetic test credentials, if approved.
-- **Target launch:** Not set; readiness gates must be satisfied first.
-- **Rewards, legal safe harbor, severity customization, and support SLAs:** To be defined and approved by actual program owners in a real engagement.
+- **Illustrative web target:** `https://staging-app.asteria.test`
+- **Illustrative API target:** `https://staging-api.asteria.test/v1/`
+- **Allowed testing model:** only explicitly authorized assets with customer-provisioned synthetic accounts, if a real program were approved.
+- **Exclusions:** production systems, third-party services, real customer data, destructive and availability testing unless the real customer explicitly approved a different scope.
+- **Researcher rewards, disclosure terms, legal language and response targets:** require program-owner approval; none is promised here.
 
-## A sample delivery process
+The `.test` domains are reserved examples, **not usable or authorized testing targets**.
 
-`Kickoff → validate assets/owners → draft brief → confirm test access/constraints → import known findings → configure program & integration → approve launch → post-launch review`
+## Delivery workflow
 
-Bugcrowd's documentation notes that program owners should define scope and the researcher brief, import known issues to help with duplicates, assign monitoring responsibility, and configure integrations as applicable. These are **general reference practices**, not an assertion that the fictional program has gone live.
+`Discovery → Scope & ownership → Test access → Researcher brief → Known issues → Notifications & handoffs → Readiness review → Authorized launch → Post-launch operations`
 
-## What this case study demonstrates
+**Go/no-go principle:** The launch date is a planning target, not a substitute for permission, safe test access, named owners or approval. A smaller launch would be acceptable **only if that smaller scope satisfies the same mandatory safety gates**.
 
-1. Requirements gathering and risk-based coordination.
-2. Clear scope boundaries and researcher expectations.
-3. Stakeholder communication and decision tracking.
-4. Dependence management across security, engineering, product and delivery.
-5. A documented, explicit go/no-go gate rather than assuming launch is ready.
+## What this project demonstrates
 
-## What is intentionally left for me to practice
+- Requirements gathering and stakeholder alignment.
+- Safe scope definition and researcher-program boundaries.
+- Accountability across security, engineering, program ownership and delivery coordination.
+- Decision logs, evidence-based readiness and escalation management.
+- Clear customer communication under launch pressure.
 
-- [ ] Make and justify an onboarding trade-off as the candidate.
-- [ ] Identify the highest-priority launch blocker in a customer scenario.
-- [ ] Write my own 60-second customer update.
-- [ ] Record my decisions separately from any coaching.
-
-## Source material
+## Source references
 
 - [Bugcrowd — Program Owner Start-Up Guide](https://docs.bugcrowd.com/customers/onboarding/owner-guide/)
 - [Bugcrowd — Getting Started with Bugcrowd](https://docs.bugcrowd.com/customers/onboarding/with-bugcrowd/)
 - [Bugcrowd — Defining the Program Scope](https://docs.bugcrowd.com/customers/program-management/defining-scope/)
 - [Bugcrowd — Updating the Program Brief](https://docs.bugcrowd.com/customers/program-management/updating-program-brief/)
 
-**All deliverables are learning artifacts, not representations of professional bug bounty program-management experience.**
+**Portfolio integrity:** These documents are hypothetical professional deliverables, not records of completed Bugcrowd program management, actual client meetings or approved researcher testing.
