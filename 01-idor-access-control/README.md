@@ -1,34 +1,39 @@
 # Lab 01 — User ID Controlled by Request Parameter
 
-**Source:** [PortSwigger Web Security Academy — User ID controlled by request parameter](https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter)  
-**Environment:** Authorized PortSwigger training lab  
-**Status:** Solved manually; screenshots and formal evidence report pending  
-**Observed testing method:** Changed the user identifier in the account page URL using a browser (Burp Suite was not required)
+**Lab:** [PortSwigger Web Security Academy — User ID controlled by request parameter](https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter)  
+**Test date:** October 9, 2026  
+**Environment:** PortSwigger's authorized, intentionally vulnerable lab  
+**Status:** **Solved and reproduced in screenshots**; sanitized screenshot uploads to this repository are pending.  
+**Method:** Chrome browser, manually modifying the `id` URL parameter; no Burp Suite used.
 
-## Objective and vulnerability
-The official lab describes a **horizontal privilege escalation** flaw in the account page. Its challenge is to obtain the API key associated with the training user `carlos` using access from the training user `wiener`. The URL's `id` parameter selects the user account.
+## Objective
 
-This is a lab example of broken object-level authorization / IDOR.
+Evaluate whether the signed-in user `wiener` can view account information for `carlos` by changing a URL parameter. The exercise demonstrates **horizontal privilege escalation / insecure direct object reference (IDOR)**.
 
-## Conceptual request difference
-These are patterns from the lab instructions, **not captured HTTP evidence**:
+## Actual observations
 
-```text
-/my-account?id=wiener
-/my-account?id=carlos
-```
+1. Signed in to the lab as `wiener`.
+2. Navigated to `/my-account?id=wiener`; the page displayed username `wiener` and a training API key.
+3. Edited the address bar to request `/my-account?id=carlos` in the same browsing session.
+4. The application displayed username `carlos` and Carlos's training API key, even though the user had not logged in as Carlos.
+5. The PortSwigger interface subsequently displayed **Solved** and **Congratulations, you solved the lab!**.
 
-Changing a URL parameter should never grant access to someone else's private account resources.
+These observations are supported by screenshots provided by the learner. They are from the training application only, not a production engagement.
 
-## Evidence checklist
-- [ ] **E01:** Original account page with `id=wiener`
-- [ ] **E02:** Modified account page with `id=carlos`, showing the result **with the API key fully redacted**
-- [ ] **E03:** PortSwigger "Lab Solved" confirmation
-- [ ] **E04 (optional):** Sanitized Burp Repeater request and response comparison
-- [ ] Complete [vulnerability-report.md](vulnerability-report.md) with actual steps and findings
+## Evidence captured
 
-## Publishing safety
-Use only your authorized training lab. Redact any API keys (including the lab key), session cookies, credentials, tokens and personal information before publishing screenshots. Do not publish the unredacted HTTP response if it contains a key.
+| File to upload | What it shows | Status |
+| --- | --- | --- |
+| `E01_authorized_wiener.png` | Original `id=wiener` account page | Captured; API key redacted; upload pending |
+| `E02_unauthorized_carlos.png` | Modified `id=carlos` account page | Captured; API key redacted; upload pending |
+| `E03_lab_solved.png` | PortSwigger successful lab completion | Captured; API key redacted; upload pending |
 
-## Portfolio integrity
-Training lab only—not a production discovery, commercial penetration test or real bug bounty submission. The learner completed this lab manually by changing the URL.
+**Publish only the sanitized images**. The unedited screenshots contain visible training API keys. The screenshot files are prepared locally for upload but have **not been uploaded** to GitHub.
+
+## Technical report
+
+See [vulnerability-report.md](vulnerability-report.md) for steps, root cause, impact, remediation and validation plan.
+
+## Next lab extension (optional)
+
+Repeat the same authorized training scenario in **Burp Suite Repeater** to record sanitized raw HTTP requests and responses. This is not required to substantiate the existing browser-based observation, and it has not been performed yet.
