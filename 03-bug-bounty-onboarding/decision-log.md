@@ -1,87 +1,70 @@
-# Onboarding Decision Log — Asteria Cloud
+# Program Onboarding — Decision & Risk Log
 
-**Case study type:** Fictional, educational simulation. No actual customer decisions or approvals.
+**Scenario:** Asteria Cloud private bug bounty launch (fictional)  
+**Portfolio role:** Technical Engagement / Delivery Manager (simulated)  
+**Recommendation:** **NO-GO** until launch-critical controls are verified and approved  
+**Actual program state:** No real program, customer decision, or launch
 
-| ID | Question / trade-off | Options | Current status | Decision owner | What evidence is needed? |
-| --- | --- | --- | --- | --- | --- |
-| D01 | Launch next week if safe test accounts are not ready? | Delay / limit scope to an approved safe target / launch anyway | **Candidate recommends NO-GO — customer approval not simulated** | Customer program owner | Test-account readiness, signed-off scope, safety review |
-| D02 | Stage-only program or add production? | Stage-only / production with safeguards | Open | Customer security/program owner | Asset inventory, permissions and risk review |
-| D03 | Researcher incentives | Approve reward schedule / keep pending | Open | Customer budget/program owner | Approved funding, VRT mapping and brief |
-| D04 | Escalation route for urgent findings | Existing incident process / new named route | Open | Customer security owner | Contacts, response coverage, tested routing |
-| D05 | Import known issues before launch | Import sanitized list / defer with documented risks | Open | Customer program owner | Known-issue inventory and platform import validation |
+## Executive decision — D01
 
-## Candidate interview exercise — D01
+Leadership requests an on-time launch. The fictional engineering team has not finished provisioning safe test accounts, and the security team has not approved the asset scope. Under those conditions, **my recommendation is to delay go-live** and explain the safety and authorization risks, rather than launch on an unverified environment.
 
-**Fictional event:** On the planned launch date, the customer says its dedicated staging accounts are not ready. Leadership is pressuring the delivery team to launch on time.
+A reduced-scope launch may be evaluated only if its selected assets, test identities, rules, escalation coverage, and approvals **independently satisfy every critical launch gate**. Removing scope alone does not compensate for missing test access or permission to test.
 
-**Question:** As the Technical Engagement Manager, would you launch, delay, or reduce scope? What would you communicate in the next customer meeting?
+### Decision record
 
-**Candidate's original answer — verbatim (October 9, 2026):**
-
-> I wouldn't recomend going live until engineering team is ready and would point out the risks
-
-*Original wording, capitalization and spelling retained exactly. This is the candidate's own answer.*
-
-**Decision the candidate actually proposed:** Recommend **NO-GO** until engineering is ready; explain launch risks. This is a recommendation in a fictional interview, not an approval or action taken in a real program.
-
-### Interview assessment — coach's feedback (not written by the candidate)
-
-**Practice score: 7/10.** This is a subjective coaching assessment, not an official Bugcrowd recruiting score.
-
-**Strengths:**
-- Prioritizes safe readiness instead of yielding to launch-date pressure.
-- Shows an awareness of delivery risk.
-- Recognizes the need to communicate risks to stakeholders.
-
-**Areas to strengthen:**
-- The **program scope is also unapproved**, not only the test accounts. Researcher testing should not begin without explicit in-scope authorization.
-- Identify accountable owners for test-account readiness (customer engineering) and scope signoff (customer security/program owner).
-- Recommend an agreed next checkpoint and a documented launch-blocker list.
-- If leadership wants to protect the date, explore a **limited, fully approved** launch only if all permissions, testing accounts, safety rules, response ownership and other critical gates are met.
-- Maintain clear boundaries: the Technical Engagement Manager coordinates readiness and makes the recommendation; the authorized customer/program owner approves the final go/no-go.
-
-### Suggested stronger response — **coach-generated example, not the candidate's words**
-
-> I would recommend postponing the launch until the critical readiness requirements are met, particularly the availability of test accounts and formal approval of the program scope.
->
-> I would clearly communicate the risks to the customer and leadership, assign owners to the outstanding dependencies, and establish a revised readiness checkpoint.
->
-> If the customer wanted to maintain the original timeline, I would explore whether a limited launch with a fully approved scope and validated testing environment was feasible.
->
-> My priority would be to protect the customer while maintaining transparency, accountability, and progress toward a successful launch.
-
-### D01 — Sample decision record (coach-generated; not an approved customer decision)
-
-| Field | Simulated working entry |
+| Field | Proposed outcome |
 | --- | --- |
-| Recommendation | **NO-GO** until mandatory readiness controls pass |
-| Evidence | Engineering test accounts unavailable; customer security has not approved scope |
-| Primary risk | Researcher access could be unsafe or outside authorized testing boundaries |
-| Option 1 | Postpone full launch; complete readiness and repeat gate review |
-| Option 2 | Consider a reduced-scope launch **only** with separate approval, validated safe accounts, exact targets, and complete launch requirements |
-| Required owners | Customer engineering: safe test accounts. Customer security/program owner: scope approval. Coordinator: blockers, dependencies and communications |
-| Decision authority | Authorized customer program owner, with security/legal input as required |
-| Next checkpoint | Agree on a specific review meeting after prerequisite evidence is provided; no date invented |
-| Customer communication | Coach's suggested response above; **not sent** |
-| Final launch approval | **Not granted or simulated** |
+| ID | D01 |
+| Trigger | Launch-date pressure despite incomplete readiness |
+| Recommendation | **NO-GO** pending critical evidence |
+| Rationale | Scope is not formally approved; safe researcher accounts are unavailable |
+| Risks if launched | Out-of-scope testing, exposure of real data, unsafe researcher access, unclear incident routing |
+| Alternative A | Delay full launch and reconvene when blockers are resolved |
+| Alternative B | Consider an independently approved reduced scope, provided all safety conditions are met |
+| Alternative C | Launch with unresolved blockers — **not recommended** |
+| Decision authority | Authorized customer program owner with security/legal input as needed |
+| Coordinator's role | Document dependencies, facilitate trade-off discussion, track owners and communicate readiness |
+| Current approval | **Not approved** — fictional recommendation only |
+| Next checkpoint | Readiness review after evidence is provided; exact date not yet agreed |
 
-### Candidate reflection — next exercise
+### Evidence required to reopen the launch decision
 
-**Question:** Leadership still wants the scheduled launch. What three specific pieces of evidence would you require before reconsidering the NO-GO recommendation?
+1. **Signed-off authorized scope:** exact asset inventory, ownership confirmation, researcher-facing inclusions/exclusions and legal/safety restrictions approved by the relevant customer decision-makers.
+2. **Safe test access:** working, customer-approved synthetic identities and test tenants; documented isolation from production accounts and data.
+3. **Operational readiness:** named security monitoring and engineering owners, tested high-severity escalation path, known-issue/duplicate handling, validated submission-to-remediation handoff, and an approved program brief.
 
-**Candidate's new answer:** _Pending._
-## Decision-record format to use
+These are prerequisites, not claims that any verification has occurred.
 
-- Decision:
-- Alternative options evaluated:
-- Risk / potential consequence:
-- Evidence currently available:
-- Owner with authority to approve:
-- Temporary control or dependency:
-- Next checkpoint:
-- Communication sent:
-- Final approval state:
+### Blocker resolution tracker
 
-A candidate-generated answer will be added without rewriting it as if it were the coach's text. Suggested improvements, when provided, will be labeled separately.
+| Blocker | Accountable customer role | Required artifact | State |
+| --- | --- | --- | --- |
+| Unapproved asset scope | Security / program owner | Written scope signoff | **Open** |
+| Test identities not ready | Engineering lead | Validated synthetic account/access test | **Open** |
+| Researcher terms not approved | Security / legal | Approved brief and disclosure rules | **Open** |
+| Critical findings process unverified | Program owner / security lead | Escalation contacts and notification check | **Open** |
+| Known-issue import not confirmed | Security program owner | Known-issues register / import validation | **Open** |
+| Launch decision | Customer program owner | Recorded go/no-go authorization | **Not granted** |
 
-**Reminder:** A mock decision log is a portfolio artifact; it does not indicate that any real customer has accepted risk or authorized testing.
+## Other onboarding decisions
+
+| ID | Decision needed | Preferred approach for discussion | Owner | Status |
+| --- | --- | --- | --- | --- |
+| D02 | Staging-only versus production testing | Begin with a narrowly defined, customer-owned safe target; add scope only after approval and readiness review | Customer security / program owner | Pending |
+| D03 | Researcher reward model | Publish only customer-approved eligibility and reward rules; confirm budget before inviting researchers | Customer program/budget owner | Pending |
+| D04 | Urgent finding escalation | Agree on named coverage and an operational notification route before launch | Customer security owner | Pending |
+| D05 | Historical findings and duplicates | Prepare a sanitized known-issues register and confirm its handling before launch | Customer program owner | Pending |
+
+## Communication approach
+
+The status message to leadership should distinguish three things:
+- **What is confirmed:** the proposed launch has unresolved authorization and access prerequisites.
+- **What is being done:** engineering/security are assigned the relevant evidence and approval tasks.
+- **What would change the decision:** explicit, documented completion of all launch-critical gates and formal customer approval.
+
+See the [sample customer kickoff email](customer-email.md) and [launch readiness checklist](launch-readiness.md).
+
+---
+
+**Portfolio disclosure:** This is a proposed decision framework in a fictional delivery case study. No actual customer has accepted risk, approved a launch, or authorized researcher testing.
