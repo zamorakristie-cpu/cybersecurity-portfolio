@@ -52,6 +52,6 @@ If the customer requests launch but the engineering team has not verified synthe
 - Tested ticketing or notification routing where applicable.
 - Formal approval from the relevant customer owner.
 
-## Interview takeaway
+## Delivery principle
 
-A well-run launch does not mean simply achieving a calendar date. It means establishing the conditions for safe testing, clear ownership, researcher expectations and responsible follow-through.
+A successful launch is not defined by meeting a calendar date alone. It requires verifiable testing authorization, safe researcher access, clear ownership, researcher expectations and a dependable process for handling findings. No launch is proposed while the critical gates remain open.
